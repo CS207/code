@@ -4,33 +4,47 @@ const int motor_pin_left = 6
 const int PhotoresistorPin = A1;
 const int TemperaturePin = A2;
 
-float Photoresistor,Temperature;
+float Photoresistor,volts,Temperature;
 int right,left;
 
 int high = 255;
-void setup() {
+int low = 55;
+int onTime = 3000;
+
+float temperature(float volts)
+{
+  return volts*100.0-50.0;
+}
+void setup() 
+{
   Serial.begin(9600);
   pinMode(motor_pin_right,OUTPUT);
   pinMode(motor_pin_right,OUTPUT);
-
 }
 
-void loop() {
+void loop() 
+{
   Photoresistor = analogRead(PhotoresistorPin);
-  Temperature = analogRead(TemperaturePin);
-
-  if()
+  volts = analogRead(TemperaturePin);
+  Temperature = temperature(volts);
+  
+  if(Photoresistor > 512)
   {
-    analogWrite(motor_pin_right, Speed); 
+    Serial.println("turn left");
+    analogWrite(motor_pin_right, high); 
+    analogWrite(motor_pin_left, low); 
     delay(onTime);
   }
-  else if()
+  else if(Temperature > 27)
   {
-    analogWrite(motor_pin_left, Speed); 
+    Serial.println("turn right");
+    analogWrite(motor_pin_left, high); 
+    analogWrite(motor_pin_right, low);
     delay(onTime);
   }
   else
   {
+    Serial.println("go go go");
     analogWrite(motor_pin_right, high); 
     analogWrite(motor_pin_left, high); 
     delay(1000);
