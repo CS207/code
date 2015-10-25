@@ -1,5 +1,6 @@
 const int motor_pin_right = 5;
-const int motor_pin_left = 6
+const int motor_pin_left = 6；
+const int tone_pin = 9;
 
 const int PhotoresistorPin = A1;
 const int TemperaturePin = A2;
@@ -33,6 +34,7 @@ void loop()
     Serial.println("turn left");
     analogWrite(motor_pin_right, high); 
     analogWrite(motor_pin_left, low); 
+   tone(tone_pin,analogRead(PhotoresistorPin));
     delay(onTime);
   }
   else if(Temperature > 27)
@@ -40,6 +42,7 @@ void loop()
     Serial.println("turn right");
     analogWrite(motor_pin_left, high); 
     analogWrite(motor_pin_right, low);
+    tone(tone_pin,analogRead(TemperaturePin));
     delay(onTime);
   }
   else
@@ -47,7 +50,6 @@ void loop()
     Serial.println("go go go");
     analogWrite(motor_pin_right, high); 
     analogWrite(motor_pin_left, high); 
-    delay(1000);
+    delay(onTime);
   }
-
 }
