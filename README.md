@@ -16,4 +16,7 @@ I had buy propeller
 but the hole for the propeller is too big for the motor.
 so I will use paper and tape to build instead it
 
+#code
+the file "project.ino"
+
 
