@@ -1,64 +1,76 @@
-// project for ship , CS207
-// lang ge, 200277222
-const int motor_pin_right = 5; // right motor pin1
-const int MotorPinRight = 6; // right motor pin2
-const int motor_pin_left = 9; // left motor pin1
-const int MotorPinLeft = 10; // left motor pin2
-const int tone_pin = 3; // tone pin 
+const int enablePin1 = 8;
+const int enablePin2 = 2;
+const int motor_pin_right = 4; // right motor pin1
+const int MotorPinRight = 7; // right motor pin2
+const int motor_pin_left = 12; // left motor pin1
+const int MotorPinLeft = 13; // left motor pin2
+const int red = 9;
+const int green = 10;
+const int blue = 11;
 
-const int PhotoresistorPin = A1; // A1 for read photoresistor
-const int TemperaturePin = A2; // A2 for temperature 
+String data;
 
-float Photoresistor,volts,Temperature; // float number for computer
-
-int onTime = 3000; //define the delay time
-
-float temperature(float volts) // function for return temperature 
+void setup()
 {
-  return volts*100.0-50.0;//computer
+  pinMode(motor_pin_right, OUTPUT);
+  pinMode(MotorPinRight, OUTPUT);
+  pinMode(motor_pin_left, OUTPUT);
+  pinMode(MotorPinLeft, OUTPUT);
+  pinMode(enablePin1, OUTPUT);
+  pinMode(enablePin2, OUTPUT);
+  Serial.begin(9600);
 }
-void setup() 
+ 
+void loop()
 {
-  Serial.begin(9600); // use serial to debug
-  pinMode(motor_pin_right,OUTPUT);
-  pinMode(MotorPinLeft,OUTPUT);
-  pinMode(motor_pin_right,OUTPUT);
-  pinMode(MotorPinRight,OUTPUT);
-}
-
-void loop() 
-{
-  Photoresistor = analogRead(PhotoresistorPin); // read resistor
-  volts = analogRead(TemperaturePin); //read temperature
-  Temperature = temperature(volts); //computer temperature
-  
-  if(Photoresistor > 512) // turn left
+   digitalWrite(enablePin1,255);
+   digitalWrite(enablePin2,255);
+  if (Serial.available() > 0)
   {
+     data = Serial.readStringUntil('\n');
+  }
+  if(data == "left")
+  {  
     Serial.println("turn left");
-    analogWrite(motor_pin_right, HIGH); // right side for high speed
-    analogWrite(MotorPinRight, LOW); // right side for high speed
-    analogWrite(motor_pin_left, LOW); // left side for low speed
-    analogWrite(MotorPinLeft, LOW); // right side for high speed
-    tone(tone_pin,analogRead(PhotoresistorPin)); // tone will work if turn right
-    delay(onTime);
+    digitalWrite(motor_pin_right, HIGH);
+    digitalWrite(MotorPinRight, LOW);
+    digitalWrite(motor_pin_left, LOW);
+    digitalWrite(MotorPinLeft, LOW);
+    analogWrite(red, 0);
+    analogWrite(green, 255);
+    analogWrite(blue, 0);
   }
-  else if(Temperature > 27) //turn right
+  if(data == "right")
   {
-    Serial.println("turn right");
-    analogWrite(motor_pin_left, LOW); //right side for low speed
-     analogWrite(MotorPinLeft, HIGH); // right side for high speed
-    analogWrite(motor_pin_right, LOW);// left side for high speed
-     analogWrite(MotorPinRight, LOW); // right side for high speed
-    tone(tone_pin,analogRead(TemperaturePin)); // tone will work is turn right
-    delay(onTime);
+     Serial.println("turn right");
+     digitalWrite(motor_pin_right, LOW);
+     digitalWrite(MotorPinRight, LOW);
+     digitalWrite(motor_pin_left, HIGH);
+     digitalWrite(MotorPinLeft, LOW);
+     analogWrite(red, 0);
+     analogWrite(green, 0);
+     analogWrite(blue, 255);
   }
-  else // go Straight
+  if(data == "back")
   {
-    Serial.println("go go go");
-    analogWrite(motor_pin_right, HIGH); // right side for high speed
-    analogWrite(MotorPinRight, LOW); // right side for high speed
-    analogWrite(motor_pin_left, LOW); // left side for high speed
-    analogWrite(MotorPinLeft, HIGH); // right side for high speed
-    delay(onTime);
+     Serial.println("back");
+     digitalWrite(motor_pin_right, LOW);
+     digitalWrite(MotorPinRight, HIGH);
+     digitalWrite(motor_pin_left, LOW);
+     digitalWrite(MotorPinLeft, HIGH);
+     analogWrite(red, 255);
+     analogWrite(green, 0);
+     analogWrite(blue, 0);
+  }
+  else
+  {
+     Serial.println("go go go");
+     digitalWrite(motor_pin_right, HIGH);
+     digitalWrite(MotorPinRight, LOW);
+     digitalWrite(motor_pin_left, HIGH);
+     digitalWrite(MotorPinLeft, LOW);
+     analogWrite(red, 255);
+     analogWrite(green, 255);
+     analogWrite(blue, 255);
   }
 }
