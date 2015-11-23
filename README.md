@@ -1,6 +1,10 @@
+#CS 207 project
+fall 2015
+lang ge
+ge203@uregina.ca
+
 # Overview
 simple Boat use Arduino ,Motor and propeller
-
 
 #Setup
 I will write code be run the Arduino and to build the project
