@@ -19,3 +19,5 @@ so I will use paper and tape to build instead it
 
 #code
 the file "project.ino"
+
+![alt text](https://github.com/CS207/code/issues/2)
