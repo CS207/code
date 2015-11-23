@@ -4,6 +4,7 @@ const int motor_pin_right = 4; // right motor pin1
 const int MotorPinRight = 7; // right motor pin2
 const int motor_pin_left = 12; // left motor pin1
 const int MotorPinLeft = 13; // left motor pin2
+/* red green blue ,RGB LED*/
 const int red = 9;
 const int green = 10;
 const int blue = 11;
@@ -51,7 +52,7 @@ void loop()
      analogWrite(green, 0);
      analogWrite(blue, 255);
   }
-  if(data == "back")
+  if(data == "back") //red
   {
      Serial.println("back");
      digitalWrite(motor_pin_right, LOW);
@@ -62,7 +63,18 @@ void loop()
      analogWrite(green, 0);
      analogWrite(blue, 0);
   }
-  else
+   if(data == "stop")
+  {
+     Serial.println("stop");
+     digitalWrite(motor_pin_right, LOW);
+     digitalWrite(MotorPinRight, LOW);
+     digitalWrite(motor_pin_left, LOW);
+     digitalWrite(MotorPinLeft, LOW);
+     analogWrite(red, 0);
+     analogWrite(green, 0);
+     analogWrite(blue, 0);
+  }
+  if(data =="go")//white
   {
      Serial.println("go go go");
      digitalWrite(motor_pin_right, HIGH);
