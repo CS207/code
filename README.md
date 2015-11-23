@@ -1,7 +1,7 @@
 #CS 207 project
 fall 2015
 lang ge
-ge203@uregina.ca
+</br>ge203@uregina.ca
 
 # Overview
 simple Boat use Arduino ,Motor and propeller
