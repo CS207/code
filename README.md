@@ -1,10 +1,11 @@
 #CS 207 project
 fall 2015
-lang ge
+</br>lang ge
+</br>200277222
 </br>ge203@uregina.ca
 
 # Overview
-simple Boat use Arduino ,Motor and propeller
+simple side wheel steamer Boat use Arduino ,Motor and propeller
 
 #Setup
 I will write code be run the Arduino and to build the project
