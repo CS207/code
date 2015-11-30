@@ -16,7 +16,7 @@ pin 9,10,11 for the RGB LED
 
 #Goals
 use computer to control the motor change direction.
-it has "go","stop","left","right","back" command used to control direction. 
+</br>it has "go","stop","left","right","back" command used to control direction. 
 
 
 #code
