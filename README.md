@@ -5,7 +5,7 @@ fall 2015
 </br>ge203@uregina.ca
 
 # Overview
-simple Simulation paddleboats with use Arduino ,Motor and propeller
+simple Simulation paddleboats with use Arduino ,Motor and propeller (build in tape and paper).
 
 #Setup
 I will write code be run the Arduino and to build the project
@@ -16,6 +16,7 @@ pin 9,10,11 for the RGB LED
 
 #Goals
 use computer to control the motor change direction.
+it has "go","stop","left","right","back" command used to control direction. 
 
 
 #code
