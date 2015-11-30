@@ -5,7 +5,7 @@ fall 2015
 </br>ge203@uregina.ca
 
 # Overview
-simple Simulation paddleboats with use Arduino ,Motor and propeller
+simple Simulation paddleboats with use Arduino ,Motor ,tape and paper
 
 #Setup
 I will write code be run the Arduino and to build the project
