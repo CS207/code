@@ -2,6 +2,7 @@
 fall 2015
 </br>lang ge
 </br>200277222
+</br> CS student
 </br>ge203@uregina.ca
 
 # Overview
@@ -13,7 +14,7 @@ the code is for control the Electric motor
 I have buy a chip :293　for control the direction
 and I will build a RGB light for the ship.
 pin 9,10,11 for the RGB LED
-</br> I use serial to sent command
+</br> I use serial window to sent command
 
 #Goals
 use computer to control the motor change direction.
