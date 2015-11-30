@@ -6,7 +6,6 @@ fall 2015
 
 # Overview
 simple Simulation paddleboats with use Arduino ,Motor and propeller
-![alt text](https://cloud.githubusercontent.com/assets/14878765/11463361/f1348ffa-96e5-11e5-9fb3-1172cafafe3e.jpg)
 
 #Setup
 I will write code be run the Arduino and to build the project
