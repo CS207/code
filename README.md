@@ -24,7 +24,12 @@ use computer to control the motor change direction.
 #code
 the file "project.ino"
 </br></br></br>picture for project</br>
+</br>I had real use this chip ---L293D</br>
 ![alt text](https://cloud.githubusercontent.com/assets/14878765/11484730/59d34832-9775-11e5-89d1-0aadb42959f4.jpg)
+</br>The actual circuit diagram</br>
 ![alt text](https://cloud.githubusercontent.com/assets/14878765/11329160/c1148056-915d-11e5-834a-e0d3e57b2147.jpg)
+</br>finial project</br>
 ![alt text](https://cloud.githubusercontent.com/assets/14878765/11460325/03c53be6-96b0-11e5-9c1c-3c045579ee34.jpg)
+
+</br> project video with input "go","stop","left","right","back"
 https://www.youtube.com/watch?v=b4sLsdYcBH4&feature=youtu.be
